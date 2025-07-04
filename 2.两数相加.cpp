@@ -18,6 +18,7 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+<<<<<<< HEAD
     ListNode *p1 = l1;
     ListNode* p2 = l2;
     ListNode* p3 = new ListNode;
@@ -51,8 +52,5 @@ public:
     }
     
     return l3->next;
-        
-    }
-};
-// @lc code=end
+
 // 250704
