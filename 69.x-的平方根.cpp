@@ -50,7 +50,24 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        return sqrt(x);
+        long long left=1,right=x,mid=x/2;
+        while(left<=right){
+            if(mid*mid==x){
+                return mid;
+            }
+            if(mid*mid>x&&(mid-1)*(mid-1)<x){
+                return mid-1;
+            }
+            if(mid*mid>x){
+                right=mid-1;
+                mid=(left+right)/2;
+            }
+            if(mid*mid<x){
+                left=mid+1;
+                mid=(left+right)/2;
+            }
+        }
+        return mid;
     }
 };
 // @lc code=end
