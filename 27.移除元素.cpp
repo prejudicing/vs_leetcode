@@ -87,7 +87,6 @@ public:
             }
         }
         return slow;
-        
     }
 };
 // @lc code=end
