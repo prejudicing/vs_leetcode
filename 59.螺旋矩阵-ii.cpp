@@ -46,12 +46,29 @@ class Solution {
 public:
     vector<vector<int>> generateMatrix(int n) {
         int num=1;
-        int k=round(n/2);
+        int k=n/2;
         int i=0,j=n-1;
+        vector<vector<int>> results(n, vector<int>(n));
         while(k--){
-            for(m=i,)
+            for(int x=i;x<j;x++){
+                results[i][x]=num++;
+            }
+            for(int x=i;x<j;x++){
+                results[x][j]=num++;
+            }
+            for(int x=j;x>i;x--){
+                results[j][x]=num++;
+            }
+            for(int x=j;x>i;x--){
+                results[x][i]=num++;
+            }
+            i++;
+            j--;
         }
-        }
+        if(n%2==1)
+        results[n/2][n/2]=n*n;
+        return results;
+    }
 };
 // @lc code=end
 
