@@ -45,8 +45,13 @@
 class Solution {
 public:
     vector<vector<int>> generateMatrix(int n) {
-        
-    }
+        int num=1;
+        int k=round(n/2);
+        int i=0,j=n-1;
+        while(k--){
+            for(m=i,)
+        }
+        }
 };
 // @lc code=end
 
