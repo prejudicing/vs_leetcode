@@ -31,7 +31,6 @@ public:
                 left++;
             }
         }
-
         return results;
     }
 };
