@@ -31,3 +31,8 @@
 ***
 ## Day7-250717
 今天学习了1hlinux操作系统，学习了wsl常用命令。
+- - -
+* * *
+## Day8-250718
+今天学习了wsl的配置和ssh相关知识。
+ [wsl 文档](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config)
