@@ -36,3 +36,7 @@
 ## Day8-250718
 今天学习了wsl的配置和ssh相关知识。
  [wsl 文档](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config)
+ ***
+ - - -
+ ## Day9-250719
+ 今天学习了linux课程
