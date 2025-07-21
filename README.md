@@ -44,3 +44,7 @@
  - - -
  ## Day10-250720
  今天把linux基础学完了。
+ ***
+ - - -
+ ## Day11-250721
+ 今天看了论文attention is all you need视频。
