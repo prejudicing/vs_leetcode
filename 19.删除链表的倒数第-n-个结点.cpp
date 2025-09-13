@@ -81,7 +81,6 @@ public:
             last=last->next;
         }
         cur->next=cur->next->next;
-
         return dummynode->next;
     }
 };
