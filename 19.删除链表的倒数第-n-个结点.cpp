@@ -73,7 +73,6 @@ public:
         dummynode->next=head;
         ListNode* cur=dummynode;
         ListNode* last=cur;
-        int m=n;
         while(n--){
             last=last->next;
         }
