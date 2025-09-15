@@ -64,26 +64,28 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        // int i=0,j=0;
-        // for(i=0;i<nums.size()-1;i++){
-        //     for(j=i+1;j<nums.size();j++){
-        //         if((nums[i]+nums[j])==target)
-        //         return vector<int>{i,j};
-        //     }
-        // }
-        // return vector<int>{i,j};
-        //暴力搜索
+        // 暴力搜索m*n复杂度
+    //     int i=0,j=0;
+    //     for(i=0;i<nums.size()-1;i++){
+    //         for(j=i+1;j<nums.size();j++){
+    //             if((nums[i]+nums[j])==target)
+    //             return vector<int>{i,j};
+    //         }
+    //     }
+    //     return vector<int>{i,j};
+    // }
 
-        int last=0;
-        vector<int> hash(nums.size(),INT_MIN);
+    //  map hash法
+        map<int,int> results;
+        int var=0;
         for(int i=0;i<nums.size();i++){
-            last=target-nums[i];
-            if(hash[last]!=INT_MIN){
-                return {i,hash[last]};
-            }
-            else{
-                hash[nums[i]]=i;
-            }
+            var=target-nums[i];
+            cout<<"var:"<<var<<" ";
+            auto it = results.find(var);
+            if(it!=results.end())
+            return {i,it->second};
+            else
+            results.insert({nums[i],i});
         }
         return {0,0};
     }
