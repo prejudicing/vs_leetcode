@@ -6,8 +6,8 @@
  * https://leetcode.cn/problems/3sum/description/
  *
  * algorithms
- * Medium (39.82%)
- * Likes:    7658
+ * Medium (39.58%)
+ * Likes:    7654
  * Dislikes: 0
  * Total Accepted:    2.5M
  * Total Submissions: 6.3M
@@ -66,38 +66,20 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        int cur=0;
-        int left=cur+1,right=nums.size()-1;
+        // 超时解法
         vector<vector<int>> results;
-        sort(nums.begin(),nums.end());
-        for(int i:nums)
-        cout<<i<<" ";
-        cout<<endl;
-        for(cur;cur<nums.size();cur++){
-            left=cur+1;right=nums.size()-1;
-            if(nums[cur]>0)
-            return results;
-            if(cur>0&&nums[cur]==nums[cur-1])
-            continue;
-            //cout<<"cur:"<<nums[cur]<<" ";
-
-            while(left<right){
-                //cout<<"left:"<<nums[left]<<" right"<<nums[right]<<" ";
-                if(nums[cur]+nums[left]+nums[right]>0)
-                right--;
-                else if(nums[cur]+nums[left]+nums[right]<0)
-                left++;
-                else{
-                    results.push_back(vector{nums[cur],nums[left],nums[right]});
-                    right--;
-                    left++;
-                    
-                    while(left<right&&nums[left]==nums[left-1])
-                    left++;
-                    while(left<right&&nums[right]==nums[right+1])
-                    right--;
+        for(int i=0;i<nums.size();i++){
+            for(int j=i+1;j<nums.size();j++){
+                for(int k=j+1;k<nums.size();k++){
+                    if(nums[i]+nums[j]+nums[k]==0){
+                        vector<int> temp=vector({nums[i],nums[j],nums[k]});
+                        sort(temp.begin(),temp.end());
+                        auto it=find(results.begin(),results.end(),temp);
+                        if(it==results.end())
+                        results.push_back(temp);
+                    }
+                        
                 }
-                
             }
         }
         return results;
