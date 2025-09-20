@@ -66,7 +66,33 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        
+        sort(nums.begin(),nums.end());
+        vector<vector<int>> results;
+        int k=0;
+        if(nums[k]>0)
+        return results;
+
+        for(k;k<nums.size();k++){
+            if(k>0&&nums[k]==nums[k-1])
+            continue;
+            int left=k+1,right=nums.size()-1;
+            while(left<right){
+                if(nums[k]+nums[left]+nums[right]==0){
+                    results.push_back(vector({nums[k],nums[left],nums[right]}));
+                    left++;
+                    right--;
+                    while(left<right&&nums[left]==nums[left-1])
+                    left++;
+                    while(left<right&&nums[right]==nums[right+1])
+                    right--;
+                }
+                else if(nums[k]+nums[left]+nums[right]>0)
+                right--;
+                else
+                left++;
+            }
+        }
+        return results;
     }
 };
 // @lc code=end
